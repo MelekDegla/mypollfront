@@ -1,0 +1,17 @@
+<mat-sidenav-container class="example-container" >
+  <mat-sidenav mode="side" opened>
+    <mat-list role="list">
+      <a routerLink="list"><mat-list-item role="listitem">show polls</mat-list-item></a>
+      <a routerLink="poll"><mat-list-item role="listitem">activated poll</mat-list-item></a>
+      <a routerLink="create"><mat-list-item role="listitem">create poll</mat-list-item></a>
+      <button mat-button (click)="disconnect()">disconnect</button>
+
+
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content >
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

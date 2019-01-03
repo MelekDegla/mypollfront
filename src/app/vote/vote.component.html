@@ -1,0 +1,20 @@
+<mat-grid-list cols="3" rowHeight="100%">
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title>{{question}}</mat-card-title>
+      <mat-card-subtitle>{{response}}</mat-card-subtitle>
+      <mat-card-content>
+        <mat-list role="list">
+          <mat-radio-group [(ngModel)]="response" >
+            <mat-list-item role="listitem" *ngFor="let answer of answers"><mat-radio-button value="{{answer.id}}" labelPosition="before">{{answer.label}}</mat-radio-button></mat-list-item>
+          </mat-radio-group>
+        </mat-list>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button (click)="vote()"> vote</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>

@@ -1,0 +1,28 @@
+<mat-grid-list cols="8" rowHeight="700">
+  <mat-grid-tile>1</mat-grid-tile>
+  <mat-grid-tile colspan="6">
+    <mat-card>
+      <mat-card-title>create poll</mat-card-title>
+      <mat-card-content>
+        <form action="">
+          {{responses|json}}
+          <mat-form-field class="" style="width: 100%">
+            <input matInput placeholder="question" name="quesion" id="quesion" [(ngModel)]="question" >
+          </mat-form-field>
+          <mat-divider></mat-divider>
+          <mat-form-field class="" *ngFor="let response of responses; " style="width: 80%" >
+            <input matInput placeholder="response" name="response" [(ngModel)]="responses[response.number].label"  >
+          </mat-form-field>
+          <button mat-raised-button (click)="addResp()">add</button>
+
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button (click)="oncreate()"> create</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>3</mat-grid-tile>
+
+</mat-grid-list>
+

@@ -1,0 +1,18 @@
+
+  <mat-card *ngFor="let poll of polls" style="margin-top: 15px; background-color: aliceblue">
+    <mat-grid-list cols="2" rowHeight="16:1">
+      <mat-grid-tile >
+          <mat-card-content >
+          {{poll.question}}
+          </mat-card-content>
+        </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card-actions>
+          <button mat-raised-button (click)="activate(poll.id)">
+            activate
+          </button>
+        </mat-card-actions>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+
